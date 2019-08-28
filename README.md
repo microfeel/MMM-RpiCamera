@@ -1,2 +1,28 @@
 # MMM-RpiCamera
-MagicMirror2 Module fro raspberry pi camera
+
+This is a module of [MagicMirror²](https://github.com/MichMich/MagicMirror) for raspberry pi camera.
+
+## Warnning
+
+DON'T USE THIS MODULE,IT IS NOT FINISHED!!
+
+## Dependencies
+
+[node-raspicam](https://github.com/troyth/node-raspicam)
+
+[TencentCloud_sdk](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
+
+## Preview
+
+## Installation
+
+Navigate into your MagicMirror's modules folder:
+
+    cd ~/MagicMirror/modules
+
+Clone this repository:
+
+    git clone https://github.com/microfeel/MMM-RpiCamera
+
+## Using the module
+

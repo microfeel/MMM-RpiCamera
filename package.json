@@ -1,0 +1,26 @@
+{
+  "name": "mmmrpicamera",
+  "version": "0.1.1",
+  "description": "Support rpicamera for Magic Mirror.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microfeel/MMM-RpiCamera"
+  },
+  "keywords": [
+    "magic mirror",
+    "smart mirror",
+    "rpicamera",
+    "module"
+  ],
+  "author": "menxin@qq.com",
+  "contributors": [],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/microfeel/MMM-RpiCamera/issues"
+  },
+  "homepage": "https://github.com/microfeel/MMM-RpiCamera#readme",
+  "dependencies": {
+    "raspicam": "^0.2.14",
+    "tencentcloud-sdk-nodejs": "^3.0.78"
+  }
+}
