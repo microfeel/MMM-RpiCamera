@@ -6,21 +6,20 @@
  */
 
 var NodeHelper = require("node_helper");
-var RaspiCam = require("./raspicam/lib/raspicam");
-var camera = new RaspiCam({
-  mode: "photo",
-  output: "./photo/snap-" + Date.now() + ".jpg",
-  encoding: "jpg",
-  timeout: 10000, // take the picture immediately
-  preview:"560,240,800,600",
-  rotation:"180"
-});
+const PiCamera = require('./pi-camera'); 
+const camera = new PiCamera({
+	mode: 'photo',
+	output: "./photo/snap-" + Date.now() + ".jpg",
+	rotation:180,
+	timeout:5000,
+	// opacity:220,
+	preview:"560,240,800,600"
+  });
 
 module.exports = NodeHelper.create({
 	// Subclass start method.
 	start: function() {
 		console.log("Starting module in subclass: " + this.name);
-		this.initCamera();
 		//initCloudConnection();
 		this.spy();
 	},
@@ -29,48 +28,26 @@ module.exports = NodeHelper.create({
 	socketNotificationReceived: function(notification, payload) {
 	},
 
-	// init PICamera
-	initCamera:function(){
-		//listen for the "start" event triggered when the start method has been successfully initiated
-		camera.on("start", function () {
-			//compare photo,if not found add lib
-		});
-
-		//listen for the "read" event triggered when each new photo/video is saved
-		camera.on("read", function (err, timestamp, filename) {
-			//do stuff
-		});
-
-		//listen for the "stop" event triggered when the stop method was called
-		camera.on("stop", function () {
-			//do stuff
-		});
-
-		//listen for the process to exit when the timeout has been reached
-		camera.on("exit", function () {
-			//do stuff
-		});
-
-		debugInfo = "Camera inited!";
-		console.log(debugInfo);
-	},
 
 	// shotnap camera image
 	spy:function(timespan){
-		camera.start();
-  },
-  
-  preview:function(time){
+		camera.snap()
+		.then((result) => {
+			// Your picture was captured
+			console.log(result+' Captured!!!');
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+		// camera.start();
+	},
+	preview:function(time){
 
-  },
-
-  snap:function(){
-
-  },
+	},
 
 	// init qcloud connection
 	initCloudConnection:function(secretId,secretKey,region){
-		const tencentcloud = require("../../../../tencentcloud-sdk-nodejs");
+		const tencentcloud = require("tencentcloud-sdk-nodejs");
 
 		// Load iai models
 		const IaiClient = tencentcloud.iai.v20180301.Client;

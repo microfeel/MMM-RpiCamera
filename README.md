@@ -8,7 +8,7 @@ DON'T USE THIS MODULE,IT IS NOT FINISHED!!
 
 ## Dependencies
 
-[node-raspicam](https://github.com/troyth/node-raspicam)
+[pi-camera](https://github.com/stetsmando/pi-camera)
 
 [TencentCloud_sdk](https://github.com/TencentCloud/tencentcloud-sdk-nodejs)
 
@@ -25,4 +25,3 @@ Clone this repository:
     git clone https://github.com/microfeel/MMM-RpiCamera
 
 ## Using the module
-
