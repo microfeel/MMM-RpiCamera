@@ -24,24 +24,20 @@ module.exports = NodeHelper.create({
 		this.spy();
 	},
 
-	// Subclass socketNotificationReceived received.
-	socketNotificationReceived: function(notification, payload) {
-	},
-
-
 	// shotnap camera image
 	spy:function(timespan){
 		camera.snap()
 		.then((result) => {
 			// Your picture was captured
-			console.log(result+' Captured!!!');
 		})
 		.catch((error) => {
 			console.error(error);
 		});
 		// camera.start();
 	},
+
 	preview:function(time){
+		//todo:
 
 	},
 

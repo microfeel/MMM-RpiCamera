@@ -41,20 +41,8 @@ Module.register('MMM-RpiCamera',{
 	// UiDom
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		wrapper.innerHTML = debugInfo;
+		wrapper.innerHTML = '';
 		return wrapper;
-	},
-
-	getScripts:function(){
-		return ['moment.js'];
-	},
-
-	// A notification arrived
-	notificationReceived: function(notification, payload, sender) {
-	},
-	
-	// Override socket notification handler.
-	socketNotificationReceived: function(notification, payload) {
 	},
 
 	start: function() {
